@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alkım ❤️</title>
+
+<style>
+body{
+margin:0;
+padding:0;
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+color:white;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+}
+
+/* Giriş ekranı */
+#login{
+position:absolute;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+transition:1s;
+z-index:10;
+}
+
+input{
+padding:12px;
+margin:8px;
+border:none;
+border-radius:20px;
+width:200px;
+text-align:center;
+}
+
+button{
+padding:10px 25px;
+border:none;
+border-radius:20px;
+background:#ff4b6e;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff1f50;
+}
+
+/* Ana ekran */
+#main{
+opacity:0;
+transition:2s;
+}
+
+.names{
+font-size:40px;
+font-weight:bold;
+letter-spacing:3px;
+position:relative;
+}
+
+.name1{
+position:absolute;
+left:-200px;
+}
+
+.name2{
+position:absolute;
+right:-200px;
+}
+
+.heart{
+font-size:80px;
+opacity:0;
+transition:1s;
+}
+
+.glow{
+animation:glow 1s ease forwards;
+}
+
+@keyframes glow{
+0%{text-shadow:0 0 0px #fff;}
+50%{text-shadow:0 0 30px #ff4b6e,0 0 60px #ff4b6e;}
+100%{text-shadow:0 0 10px #ff4b6e;}
+}
+
+.message{
+max-width:300px;
+margin-top:120px;
+opacity:0;
+transition:2s;
+font-size:18px;
+line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div id="login">
+<h2>Giriş Yap</h2>
+<input type="text" id="isim" placeholder="İsim">
+<input type="password" id="sifre" placeholder="Şifre">
+<button onclick="kontrol()">Giriş</button>
+</div>
+
+<div id="main">
+<div class="names">
+<span class="name1">Selami</span>
+<span class="name2">Alkım</span>
+<div class="heart">❤️</div>
+</div>
+
+<div class="message">
+Sevgilim,birtanem,herr şeyim
+Hayatımın anlamı,en kıymetlim,en değerlim
+Her şeyden çok sevdiğim minik bebeğim
+Sevgililer günümüz kutlu olsun dünyanın enn ama enn iyi sevgilisii
+Seninle tüm ömrümü paylaşmakbu dünyadaki enn güzel şey benim için
+Seni herr şeyden çook seviyorum aşkımmmm💞
+        
+</div>
+</div>
+
+<script>
+function kontrol(){
+var isim=document.getElementById("isim").value;
+var sifre=document.getElementById("sifre").value;
+
+if(isim==="alkım" && sifre==="260905"){
+document.getElementById("login").style.opacity="0";
+setTimeout(()=>{
+document.getElementById("login").style.display="none";
+document.getElementById("main").style.opacity="1";
+animasyon();
+},1000);
+}else{
+alert("Hatalı giriş!");
+}
+}
+
+function animasyon(){
+let n1=document.querySelector(".name1");
+let n2=document.querySelector(".name2");
+let heart=document.querySelector(".heart");
+let msg=document.querySelector(".message");
+
+n1.style.transition="2s";
+n2.style.transition="2s";
+
+n1.style.left="0px";
+n2.style.right="0px";
+
+setTimeout(()=>{
+heart.style.opacity="1";
+heart.classList.add("glow");
+},2000);
+
+setTimeout(()=>{
+msg.style.opacity="1";
+},3000);
+}
+</script>
+
+</body>
+</html>
